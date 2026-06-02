@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="game-wrapper">
+
+    <div id="top-bar">
+
+        <div class="stat-box">
+            Score:
+            <span id="score">0</span>
+        </div>
+
+        <div class="stat-box">
+            Coins:
+            <span id="coins">0</span>
+        </div>
+
+        <div class="stat-box">
+            Level:
+            <span id="level">1</span>
+        </div>
+
+        <div class="stat-box">
+            Bricks:
+            <span id="bricks">0</span>
+        </div>
+
+    </div>
+
+    <div id="controls">
+
+        <button id="startBtn">
+            Start Game
+        </button>
+
+    </div>
+
+    <div id="falling-area"></div>
+
+    <div id="grid-container"></div>
+
+    <div id="building-panel">
+
+        <h3>Your Building</h3>
+
+        <div id="building"></div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/game.js') }}"></script>
+
+{% endblock %}
