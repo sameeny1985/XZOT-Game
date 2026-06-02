@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Leaderboard</h1>
+
+<table>
+
+<tr>
+
+<th>Rank</th>
+
+<th>User</th>
+
+<th>Score</th>
+
+<th>Coins</th>
+
+<th>Level</th>
+
+</tr>
+
+{% for user in users %}
+
+<tr>
+
+<td>{{ loop.index }}</td>
+
+<td>{{ user.username }}</td>
+
+<td>{{ user.score }}</td>
+
+<td>{{ user.coins }}</td>
+
+<td>{{ user.level }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}
