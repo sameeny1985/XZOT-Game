@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Money Builder</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">
+Money Builder
+</div>
+
+<div class="menu">
+
+{% if session.get('user_id') %}
+
+<a href="/dashboard">Dashboard</a>
+
+<a href="/game">Game</a>
+
+<a href="/leaderboard">Leaderboard</a>
+
+<a href="/logout">Logout</a>
+
+{% endif %}
+
+</div>
+
+</nav>
+
+<div class="container">
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+
+<div class="flash-box">
+
+{% for msg in messages %}
+<p>{{ msg }}</p>
+{% endfor %}
+
+</div>
+
+{% endif %}
+{% endwith %}
+
+{% block content %}
+{% endblock %}
+
+</div>
+
+</body>
+</html>
