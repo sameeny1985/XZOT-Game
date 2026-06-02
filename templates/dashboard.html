@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="dashboard">
+
+<h1>
+
+Welcome {{ user.username }}
+
+</h1>
+
+<div class="stats">
+
+<div class="box">
+
+<h3>Score</h3>
+
+<p>{{ user.score }}</p>
+
+</div>
+
+<div class="box">
+
+<h3>Coins</h3>
+
+<p>{{ user.coins }}</p>
+
+</div>
+
+<div class="box">
+
+<h3>Level</h3>
+
+<p>{{ user.level }}</p>
+
+</div>
+
+<div class="box">
+
+<h3>Bricks</h3>
+
+<p>{{ user.bricks }}</p>
+
+</div>
+
+</div>
+
+<a href="/game" class="play-btn">
+
+START GAME
+
+</a>
+
+</div>
+
+{% endblock %}
