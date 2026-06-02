@@ -2,10 +2,15 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import timedelta
-
+import os
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = 'change_this_secret_key'
+
+
+app.config['SECRET_KEY'] = os.getenv(
+    'SECRET_KEY',
+    'dev-secret-key'
+)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///game.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.permanent_session_lifetime = timedelta(days=7)
