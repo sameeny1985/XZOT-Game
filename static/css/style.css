@@ -114,6 +114,7 @@ body {
     position: relative;
 }
 
+/* باکس اصلی که اسکناس‌ها درونش سقوط می‌کنند */
 #drop-zone {
     width: 100%;
     height: 280px;
@@ -124,6 +125,7 @@ body {
     border: 1px dashed #374151;
 }
 
+/* استایل اسکناس‌های در حال سقوط */
 .bill {
     width: 65px;
     height: 35px;
@@ -148,6 +150,7 @@ body {
     transform: scale(1.05);
 }
 
+/* شبکه استایل جدول ۹۰ تایی (۱۰ ستون) */
 .grid-90 {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -160,6 +163,7 @@ body {
     box-sizing: border-box;
 }
 
+/* خانه‌های جدول شماره‌دار */
 .cell {
     background: #262636;
     border: 1px solid #374151;
@@ -174,6 +178,7 @@ body {
     transition: all 0.2s;
 }
 
+/* افکت سبز شدن زمان رها کردن اسکناس درست */
 .cell.highlight-correct {
     background-color: #10b981 !important;
     color: #fff !important;
