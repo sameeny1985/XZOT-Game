@@ -1,55 +1,51 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XZOT Brick Builder Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
 
-{% block content %}
-
-<div id="game-wrapper">
-
-    <div id="top-bar">
-
-        <div class="stat-box">
-            Score:
-            <span id="score">0</span>
+    <div class="game-container">
+        <div class="auth-bar" style="width: 100%; display: flex; justify-content: space-between; align-items: center; background: #111116; padding: 10px 20px; border-radius: 8px; border: 1px solid #262636; font-size: 14px; box-sizing: border-box; margin-bottom: 10px;">
+            <span id="user-email" style="color: #9ca3af;">در حال بررسی وضعیت ورود...</span>
+            <button id="auth-btn" class="btn-secondary">ورود با گوگل</button>
         </div>
 
-        <div class="stat-box">
-            Coins:
-            <span id="coins">0</span>
+        <div class="scoreboard">
+            <div class="stat-box">مرحله: <span id="level-val">1</span></div>
+            <div class="stat-box">امتیاز (Token): <span id="score-val">0</span></div>
+            <div class="stat-box">آجرهای چیده شده: <span id="bricks-val">0/50</span></div>
         </div>
 
-        <div class="stat-box">
-            Level:
-            <span id="level">1</span>
+        <div class="building-area">
+            <div id="building-visual">
+                </div>
+            <div class="ground-line"></div>
         </div>
 
-        <div class="stat-box">
-            Bricks:
-            <span id="bricks">0</span>
+        <div class="game-play-zone">
+            <div id="drop-zone"></div>
+
+            <div id="grid-container" class="grid-90"></div>
         </div>
 
+        <div class="controls">
+            <button id="start-btn" class="btn-primary" style="display:none;">شروع بازی</button>
+        </div>
     </div>
 
-    <div id="controls">
-
-        <button id="startBtn">
-            Start Game
-        </button>
-
+    <div id="game-overlay" class="overlay">
+        <div class="overlay-content">
+            <h2 id="overlay-title">خوش آمدید</h2>
+            <p id="overlay-desc">برای شروع ساخت ساختمان توکنی خود، دکمه زیر را بزنید.</p>
+            <button id="overlay-btn" class="btn-primary">شروع مرحله ۱</button>
+        </div>
     </div>
 
-    <div id="falling-area"></div>
-
-    <div id="grid-container"></div>
-
-    <div id="building-panel">
-
-        <h3>Your Building</h3>
-
-        <div id="building"></div>
-
-    </div>
-
-</div>
-
-<script src="{{ url_for('static', filename='js/game.js') }}"></script>
-
-{% endblock %}
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
